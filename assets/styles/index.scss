@@ -1,1 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
+
+.success {
+  background-color: $green;
+}
+
+.failure {
+  background-color: $red;
+}
+
+.hidden {
+  display: none;
+}
