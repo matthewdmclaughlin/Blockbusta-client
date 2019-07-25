@@ -1,13 +1,11 @@
 'use strict'
 const showDvdsTemplate = require('../templates/dvd-listing.handlebars')
+const store = require('../store')
 // const updateDvdsTemplate = require('../templates/dvd-listing.handlebars')
 const getDvdsSuccess = (data) => {
-  const showDvdsHtml = showDvdsTemplate({
-    dvds: data.dvds
-  })
+  const showDvdsHtml = showDvdsTemplate({ dvds: data.dvds })
   $('.content').html(showDvdsHtml)
 }
-const store = require('../store')
 
 const successMessage = message => {
   $('#message').text(message)

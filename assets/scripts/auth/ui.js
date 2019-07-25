@@ -5,16 +5,24 @@ const store = require('../store')
 const successMessage = message => {
   $('#message').text(message)
   $('#message').css('background-color', 'green')
-  $('#message').addClass('.success')
-  $('#message').removeClass('.failure')
+  $('#message').addClass('success')
+  $('#message').removeClass('failure')
   $('form').trigger('reset')
+  setTimeout(function () {
+    $('#message').removeClass('success')
+    $('#message').text('')
+  }, 5000)
 }
 const failureMessage = message => {
   $('#message').text(message)
   $('#message').css('background-color', 'red')
-  $('#message').removeClass('.success')
-  $('#message').addClass('.failure')
+  $('#message').removeClass('success')
+  $('#message').addClass('failure')
   $('form').trigger('reset')
+  setTimeout(function () {
+    $('#message').removeClass('failure')
+    $('#message').text('')
+  }, 5000)
 }
 const signUpSuccessful = responseData => {
   successMessage('You signed up successfully!')
@@ -32,6 +40,9 @@ const signInSuccessful = responseData => {
   $('#new-gameboard').removeClass('hidden')
   $('#quitGame').removeClass('hidden')
   $('#quickSignIn').addClass('hidden')
+  $('#getDvdsButton').removeClass('hidden')
+  $('#create-dvd').removeClass('hidden')
+
   // if (responseData.user.email !== 'e@e') {
   //   // $('#get-game').removeClass('hidden')
   // }
@@ -51,6 +62,7 @@ const signOutSuccessful = responseData => {
   // $('#new-gameboard').addClass('hidden')
   $('#quickSignIn').removeClass('hidden')
   $('.container').addClass('hidden')
+  $('#create-dvd').addClass('hidden')
 }
 const signOutFailure = responseData => {
   failureMessage('Sign out failed. Please check your username and/or password')

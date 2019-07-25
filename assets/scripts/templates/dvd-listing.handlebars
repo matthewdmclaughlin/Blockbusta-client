@@ -1,20 +1,43 @@
 {{#each dvds as |dvd|}}
   {{log dvd}}
   <section data-id="{{dvd.id}}">
-    <h6>Title:</h6>
+    <!-- <h6>Title:</h6> -->
     <h3>
       {{limit dvd.title 15}}
     </h2>
-    <h6>Title:</h6>
+    <!-- <h6>Title:</h6> -->
     <p>
-      {{#if dvd.title}}
-        {{dvd.title}}
+      {{#if dvd.year}}
+        {{dvd.year}}
       {{else}}
-        No author provided.
+        No year provided.
       {{/if}}
     </p>
-        <button id="deleteDVDButton" class="btn btn-danger delete-dvd" data-id="{{book.id}}">Delete DVD</button>
-    {{> partial}}
+    <p>
+      {{#if dvd.starring}}
+        {{dvd.starring}}
+      {{else}}
+        No cast provided.
+      {{/if}}
+    </p>
+    <p>
+      {{#if dvd.synopsis}}
+        {{dvd.synopsis}}
+      {{else}}
+        No synopsis provided.
+      {{/if}}
+    </p>
+        <!-- <button id="editDVDButton" class="btn btn-danger edit-dvd" data-id="{{dvd.id}}">Edit DVD Info</button> -->
+
+        <form class="edit-dvd" data-id="{{dvd.id}}">
+            <input name="dvd[title]" type="text" placeholder="Title">
+            <input name="dvd[year]" type="text" placeholder="Year">
+            <input name="dvd[starring]" type="text" placeholder="Starring">
+            <input name="dvd[synopsis]" type="text" placeholder="Synopsis">
+            <button id="DvdButton" type="submit" class="btn btn0info">Submit</button>
+        </form>
+
+                <button id="deleteDVDButton" class="btn btn-danger delete-dvd" data-id="{{dvd.id}}">Delete DVD</button>
   </section>
 
 {{/each}}

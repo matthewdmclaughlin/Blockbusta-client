@@ -17,26 +17,37 @@ const indexDvds = formData => {
 const createDvd = function () {
   return $.ajax({
     url: config.apiUrl + '/dvds',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
     method: 'POST',
-    data: ''
-  })
-}
-const deleteDvd = function (id) {
-  return $.ajax({
-    url: `${config.apiUrl} + '/dvds/${id}`,
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    method: 'DELETE',
-    data: ''
+    }
   })
 }
+
 const showDvd = function (id) {
   return $.ajax({
-    url: config.apiUrl +'/dvds/:id'
+    url: config.apiUrl + '/dvds/:id',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const deleteDvd = function (id) {
+  return $.ajax({
+    url: config.apiUrl + '/dvds/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const editDvd = (formData, id) => {
+  return $.ajax({
+    url: config.apiUrl + '/dvds/' + id,
+    data: formData,
+    method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -44,5 +55,8 @@ const showDvd = function (id) {
 }
 module.exports = {
   indexDvds,
-  createDvd
+  createDvd,
+  showDvd,
+  deleteDvd,
+  editDvd
 }

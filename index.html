@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Block'busta</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -13,7 +13,7 @@
     </head>
     <body>
       <h1>'Block' BUSTA!</h1>
-      <!-- <h3> a neighborhood DVD sharing library!</h3> -->
+      <h3>Organize your movie collection tootsuite!</h3>
       <form id="sign-up" class="col-md-8">
     <h2>Sign Up to Join!</h2>
     <input type="email" name="credentials[email]" placeholder="Email">
@@ -41,7 +41,17 @@
     <!-- <input type="submit" value="Change Password!"> do I need this? -->
     <button class="btn btn-primary">Change Password</button>
   </form>
-  <button id="getDvdsButton" class="btn btn0info mr-2">Show All DVDs</button>
+  <button id="getDvdsButton" type="button" class="btn btn0info mr-2 hidden">Show All DVDs</button>
+
+  <form id="create-dvd" class="col-md-6 hidden">
+      <h2>Add a New DVD to the Collection!</h2>
+      <input name="dvd[title]" type="text" placeholder="Title">
+      <input name="dvd[year]" type="text" placeholder="Year">
+      <input name="dvd[starring]" type="text" placeholder="Starring">
+      <input name="dvd[synopsis]" type="text" placeholder="Synopsis">
+      <button id="createDvdButton" type="button" class="btn btn-info">Add Your DVD</button>
+  </form>
+  <div id="message"></div>
 <main>
       <div id="content" class="content"></div>
     </main>
