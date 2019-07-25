@@ -1,5 +1,6 @@
 #!/bin/bash
 
-curl --include --request DELETE "http://localhost:4741/dvds/${ID}"
-
+curl "http://localhost:4741/dvds/${ID}" \
+  --include \
+  --request DELETE
 echo

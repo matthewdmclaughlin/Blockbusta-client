@@ -1,7 +1,9 @@
 
 #!/bin/bash
 
-curl --include --request PATCH "http://localhost:4741/${ID}" \
+curl "http://localhost:4741/dvds/${ID}" \
+  --include \
+  --request PATCH \
   --header "Content-type: application/json" \
   --data '{
     "dvd": {
@@ -11,3 +13,5 @@ curl --include --request PATCH "http://localhost:4741/${ID}" \
       "synopsis": "'"${SYNOPSIS}"'"
     }
   }'
+
+echo

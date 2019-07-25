@@ -32,9 +32,9 @@ const signInSuccessful = responseData => {
   $('#new-gameboard').removeClass('hidden')
   $('#quitGame').removeClass('hidden')
   $('#quickSignIn').addClass('hidden')
-  if (responseData.user.email !== 'e@e') {
-    $('#get-game').removeClass('hidden')
-  }
+  // if (responseData.user.email !== 'e@e') {
+  //   // $('#get-game').removeClass('hidden')
+  // }
 }
 const signInFailure = responseData => {
   failureMessage('Sign in failed')
@@ -48,7 +48,7 @@ const signOutSuccessful = responseData => {
   $('#sign-up').removeClass('hidden')
   $('#sign-out').addClass('hidden')
   $('#change-password').addClass('hidden')
-  $('#new-gameboard').addClass('hidden')
+  // $('#new-gameboard').addClass('hidden')
   $('#quickSignIn').removeClass('hidden')
   $('.container').addClass('hidden')
 }
