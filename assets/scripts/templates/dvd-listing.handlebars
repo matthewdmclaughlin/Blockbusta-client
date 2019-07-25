@@ -1,0 +1,19 @@
+{{#each dvds as |dvd|}}
+  {{log dvd}}
+  <section data-id="{{dvd.id}}">
+    <h6>Title:</h6>
+    <h3>
+      {{limit dvd.title 15}}
+    </h2>
+    <h6>Title:</h6>
+    <p>
+      {{#if dvd.title}}
+        {{dvd.title}}
+      {{else}}
+        No author provided.
+      {{/if}}
+    </p>
+    <!-- {{> partial}} -->
+  </section>
+
+{{/each}}
