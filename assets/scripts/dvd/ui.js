@@ -17,17 +17,23 @@ const failureMessage = message => {
   $('#message').text(message)
   $('#message').removeClass('success')
   $('#message').addClass('failure')
-  // Clear out our getFormFields
   $('form').trigger('reset')
 }
 
 const createDvdSuccessful = responseData => {
-  successMessage(`Create game successfully`)
-  store.newGame = responseData.game
+  successMessage(`Created DVD successfully`)
   $('.container').removeClass('hidden')
+  setTimeout(function () {
+    $('#message').removeClass('success')
+    $('#message').text('')
+  }, 5000)
 }
 const createDvdFailure = responseData => {
-  failureMessage('Create game failed')
+  failureMessage('Create DVD failed')
+  setTimeout(function () {
+    $('#message').removeClass('failure')
+    $('#message').text('')
+  }, 5000)
 }
 
 module.exports = {

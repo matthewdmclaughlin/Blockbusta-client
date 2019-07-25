@@ -37,16 +37,11 @@ const signInSuccessful = responseData => {
   $('#sign-up').addClass('hidden')
   $('#sign-out').removeClass('hidden')
   $('#change-password').removeClass('hidden')
-  $('#new-gameboard').removeClass('hidden')
-  $('#quitGame').removeClass('hidden')
   $('#quickSignIn').addClass('hidden')
   $('#getDvdsButton').removeClass('hidden')
   $('#create-dvd').removeClass('hidden')
-
-  // if (responseData.user.email !== 'e@e') {
-  //   // $('#get-game').removeClass('hidden')
-  // }
 }
+
 const signInFailure = responseData => {
   failureMessage('Sign in failed')
   store.user = responseData.user
@@ -59,10 +54,10 @@ const signOutSuccessful = responseData => {
   $('#sign-up').removeClass('hidden')
   $('#sign-out').addClass('hidden')
   $('#change-password').addClass('hidden')
-  // $('#new-gameboard').addClass('hidden')
   $('#quickSignIn').removeClass('hidden')
   $('.container').addClass('hidden')
   $('#create-dvd').addClass('hidden')
+  $('#content').html('')
 }
 const signOutFailure = responseData => {
   failureMessage('Sign out failed. Please check your username and/or password')

@@ -2,7 +2,6 @@
 
 const config = require('../config')
 const store = require('../store')
-// Create new games on the server. (CREATE) FIX: No POST request to create a new game.
 
 const indexDvds = formData => {
   return $.ajax({
@@ -14,9 +13,10 @@ const indexDvds = formData => {
     }
   })
 }
-const createDvd = function () {
+const createDvd = (formData) => {
   return $.ajax({
     url: config.apiUrl + '/dvds',
+    data: formData,
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token

@@ -13,7 +13,7 @@ $(() => {
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('body').on('click', '#getDvdsButton', dvdEvents.onGetDvds)
-  $('body').on('submit', '#createDvdButton', dvdEvents.onGetDvds)
+  $('#create-dvd').on('submit', dvdEvents.onCreateDvds)
   $('#getDvdsButton').on('click', dvdEvents.onGetDvds)
   $('#clearDvdsButton').on('click', dvdEvents.onClearDvds)
   $('.content').on('click', '.delete-dvd', dvdEvents.onDeleteDvds)

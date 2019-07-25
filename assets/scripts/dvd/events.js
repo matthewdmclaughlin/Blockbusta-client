@@ -12,10 +12,13 @@ const onGetDvds = (event) => {
 }
 const onCreateDvds = (event) => {
   event.preventDefault()
-  api.createDvd()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.createDvd(formData)
     .then(ui.createDvdSuccessful)
     .catch(ui.createDvdFailure)
 }
+
 const onClearDvds = (event) => {
   event.preventDefault()
   ui.clearDvds()
