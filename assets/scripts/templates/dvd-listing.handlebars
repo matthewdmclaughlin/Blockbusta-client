@@ -1,11 +1,8 @@
 {{#each dvds as |dvd|}}
-  {{log dvd}}
   <section data-id="{{dvd.id}}">
-    <!-- <h6>Title:</h6> -->
     <h3>
       {{limit dvd.title 15}}
     </h2>
-    <!-- <h6>Title:</h6> -->
     <p>
       {{#if dvd.year}}
         {{dvd.year}}
@@ -27,7 +24,6 @@
         No synopsis provided.
       {{/if}}
     </p>
-        <!-- <button id="editDVDButton" class="btn btn-danger edit-dvd" data-id="{{dvd.id}}">Edit DVD Info</button> -->
 
         <form class="edit-dvd" data-id="{{dvd.id}}">
             <input name="dvd[title]" type="text" placeholder="Title">
