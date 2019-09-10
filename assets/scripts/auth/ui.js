@@ -11,7 +11,7 @@ const successMessage = message => {
   setTimeout(function () {
     $('#message').removeClass('success')
     $('#message').text('')
-  }, 5000)
+  }, 2500)
 }
 const failureMessage = message => {
   $('#message').text(message)
@@ -22,7 +22,7 @@ const failureMessage = message => {
   setTimeout(function () {
     $('#message').removeClass('failure')
     $('#message').text('')
-  }, 5000)
+  }, 2500)
 }
 const signUpSuccessful = responseData => {
   successMessage('You signed up successfully!')

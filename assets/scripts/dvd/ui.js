@@ -26,14 +26,14 @@ const createDvdSuccessful = responseData => {
   setTimeout(function () {
     $('#message').removeClass('success')
     $('#message').text('')
-  }, 5000)
+  }, 2500)
 }
 const createDvdFailure = responseData => {
   failureMessage('Create DVD failed')
   setTimeout(function () {
     $('#message').removeClass('failure')
     $('#message').text('')
-  }, 5000)
+  }, 2500)
 }
 
 module.exports = {

@@ -1,5 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  background-attachment: fixed;
+  background-image: url('public/img/DVDz.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .success {
   background-color: $green;
 }
@@ -11,3 +19,20 @@
 .hidden {
   display: none;
 }
+
+.addeventform {
+  background-color: light-blue;
+  border: 2px solid light-pink;
+  float: right;
+  font-family: verdana;
+  padding-left: 10px;
+  position: relative;
+}
+
+.inner1 {
+  float: right;
+  }
+
+.inner2 {
+  float: right;
+    }
